@@ -9,10 +9,13 @@ class MerkleTree {
         }
         const combined = [];
         for (let i = 0; i < leaves.length; i = i + 2) {
-            const combine = this.concat(leaves[i], leaves[i+1]);
-            combined.push(combine);
+            if (leaves[i + 1]) {
+                combined.push(this.concat(leaves[i], leaves[i + 1]));
+            } else {
+                combined.push(leaves[i]);
+            }
         }
-        return this.getRoot(combined)
+        return this.getRoot(combined);
     }
 }
 

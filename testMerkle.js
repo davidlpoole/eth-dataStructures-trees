@@ -22,9 +22,21 @@ describe('merkle', function () {
         assert.equal(merkleTree.getRoot(), "Hash(Hash(A + B) + Hash(C + D))");
     });
 
-    it('should create a root from eight leaves: [A,B,C,D,E,F,G,H]', function () {
-        const leaves = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+    it('should create a root from three leaves: [A,B,C]', function() {
+        const leaves = ['A', 'B', 'C'];
         const merkleTree = new MerkleTree(leaves, concat);
-        assert.equal(merkleTree.getRoot(), "Hash(Hash(Hash(A + B) + Hash(C + D)) + Hash(Hash(E + F) + Hash(G + H)))");
+        assert.equal(merkleTree.getRoot(), "Hash(Hash(A + B) + C)");
+    });
+
+    it('should create a root from five leaves: [A,B,C,D,E]', function () {
+        const leaves = ['A', 'B', 'C', 'D', 'E'];
+        const merkleTree = new MerkleTree(leaves, concat);
+        assert.equal(merkleTree.getRoot(), "Hash(Hash(Hash(A + B) + Hash(C + D)) + E)");
+    });
+
+    it('should create a root from seven leaves: [A,B,C,D,E,F,G]', function () {
+        const leaves = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+        const merkleTree = new MerkleTree(leaves, concat);
+        assert.equal(merkleTree.getRoot(), "Hash(Hash(Hash(A + B) + Hash(C + D)) + Hash(Hash(E + F) + G))");
     });
 });
