@@ -3,8 +3,16 @@ class MerkleTree {
         this.leaves = leaves;
         this.concat = concat;
     }
-    getRoot() {
-        return this.concat(this.leaves[0], this.leaves[1]);
+    getRoot(leaves = this.leaves) {
+        if (leaves.length === 1) {
+            return leaves[0];
+        }
+        const combined = [];
+        for (let i = 0; i < leaves.length; i = i + 2) {
+            const combine = this.concat(leaves[i], leaves[i+1]);
+            combined.push(combine);
+        }
+        return this.getRoot(combined)
     }
 }
 
