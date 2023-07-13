@@ -1,5 +1,5 @@
-const Tree = require('./Tree');
-const Node = require('./Node');
+const Tree = require('../binary/Tree');
+const Node = require('../binary/Node');
 const { assert } = require('chai');
 
 describe('tree', () => {

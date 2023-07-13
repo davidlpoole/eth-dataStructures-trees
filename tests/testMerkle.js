@@ -1,6 +1,6 @@
 const {assert} = require("chai");
 const {hashProof, sha256, concatHash, concatLetters} = require('./testUtil');
-const MerkleTree = require('./index');
+const MerkleTree = require('../merkle');
 
 describe('merkle proof', function() {
     const leaves = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];

@@ -4,7 +4,7 @@
  * @param {string} proof.data   - The leaf node data.
  * @param {boolean} proof.left  - The side of the branch the node is on.
  * @param {string} node         - A leaf node we're trying to prove is within the merkle tree.
- * @param {string} root         - The valid Merkle Root from MerkleTree.getRoot()
+ * @param {string} root         - The valid merkle Root from MerkleTree.getRoot()
  * @param {function} concat     - The method used to combine the leaf nodes.
  * @returns boolean             - Whether the proof is valid
  */

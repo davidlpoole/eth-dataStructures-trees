@@ -1,5 +1,5 @@
 /**
- * Create a Merkle Tree
+ * Create a merkle binary
  * @param {String[]} leaves - a list of nodes to add to the tree.
  * @param {function} concat - a function used to combine the leaves.
  */

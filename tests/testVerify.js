@@ -1,6 +1,6 @@
 const {assert} = require("chai");
-const MerkleTree = require('./index');
-const verify = require('./verify');
+const MerkleTree = require('../merkle');
+const verify = require('../merkle/verify');
 
 const concat = (a, b) => `Hash(${a} + ${b})`;
 
