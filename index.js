@@ -1,3 +1,8 @@
+/**
+ * Create a Merkle Tree
+ * @param {String[]} leaves - a list of nodes to add to the tree.
+ * @param {function} concat - a function used to combine the leaves.
+ */
 class MerkleTree {
     constructor(leaves, concat) {
         this.leaves = leaves;
@@ -24,6 +29,13 @@ class MerkleTree {
         return this.getRoot(combined);
     }
 
+    /**
+     *
+     * @param index - index of the leaf we're proving is in the merkle tree
+     * @param layer - layer of the tree to iterate over
+     * @param proof - save the state of the list
+     * @return {*[]|*} -
+     */
     getProof(index, layer = this.leaves, proof = []) {
         // top layer base case
         if (layer.length === 1) return proof;
