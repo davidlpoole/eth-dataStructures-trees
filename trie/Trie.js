@@ -8,7 +8,12 @@ class Trie {
     insert(word) {
         let node = this.root;
         [...word].forEach((letter, index) => {
-            node = node.children[letter] = new TrieNode(letter);
+            if (!node.children[letter]) {
+                node = node.children[letter] = new TrieNode(letter);
+            }
+            else {
+                node = node.children[letter]
+            }
             if (index === word.length - 1) {
                 node.isWord = true;
             }
